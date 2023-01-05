@@ -1,4 +1,4 @@
-int getLength(ListNode* temp)
+int getLength(Node* temp)
     {
         int count=0;
         while(temp!=NULL)
@@ -8,7 +8,7 @@ int getLength(ListNode* temp)
         }
         return count;
     }
-    ListNode* reverseKGroup(ListNode* head, int k) {
+    Node* reverseKGroup(Node* head, int k) {
         
         //If no node or only one node is present
         if(head==NULL||head->next==NULL)
@@ -23,9 +23,9 @@ int getLength(ListNode* temp)
         
         
         int count=0;
-        ListNode* curr=head;
-        ListNode* prev=NULL;
-        ListNode* next=curr->next;
+        Node* curr=head;
+        Node* prev=NULL;
+        Node* next=curr->next;
         
         //To reverse till kth node
         while(curr!=NULL && count<k)
