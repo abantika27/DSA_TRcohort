@@ -1,3 +1,4 @@
+//naive
 Node* kthfromLast(Node* head,int k){
 int size = 0;
 Node* temp=head;
@@ -17,3 +18,20 @@ count++;
 }
 return temp;
 }
+
+//slowfast approach
+int kthfromLast(Node* head, Node* tail, int k){
+
+    Node* slow = head;
+    Node* fast = head;
+    for(int i = 0 ; i < k ; i++){
+        fast = fast->next;
+    }
+    while(fast!=tail){
+        slow= slow->next;
+        fast= fast->next;
+    }
+
+    return slow->data;
+}
+
